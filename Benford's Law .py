@@ -8,10 +8,6 @@ from benfordslaw import benfordslaw
 import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set_style('dark')
-import sys
-import math
 from collections import defaultdict
 
 
@@ -94,12 +90,13 @@ print(d)
 plt.rc('font', size=12)
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.bar(digits, digit_probs,width = 0.3)
-ax.bar(digits+0.25, d['prob'],color='m',width = 0.3)
+ax.bar(digits+0.25, d['prob'],color='brown',width = 0.3)
 plt.xticks(digits)
-plt.xlabel('Digits')
-plt.ylabel('Probability')
-plt.title("Benford's Law: Probability of Leading Digits")
+plt.xlabel('Digitos')
+plt.ylabel('Probabilidad')
+plt.title("Ley de Benford: Probabilidad de los primeros digitos")
 ax.legend(labels=['BL', 'HON'])
+ax.patch.set_facecolor("white")
 plt.show()
 
 
@@ -109,10 +106,4 @@ plt.show()
 #Realizar prueba chi cuadrado
 bl = benfordslaw(alpha=0.01)
 results = bl.fit(X)
-
-
-# In[ ]:
-
-
-
 
